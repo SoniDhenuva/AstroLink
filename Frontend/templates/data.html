@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submitted Observations - AstroLink</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Header -->
+  <header class="bg-gray-800 p-4">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">🔭 AstroLink Observations</h1>
+      <nav>
+        <a href="/" class="ml-4 hover:text-yellow-400">Home</a>
+        <a href="/data" class="ml-4 hover:text-yellow-400 font-bold">Data</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Table -->
+  <main class="max-w-6xl mx-auto p-6">
+    <h2 class="text-3xl font-semibold mb-6">Submitted Star Count Data</h2>
+    {% if submissions %}
+    <div class="overflow-auto rounded-lg shadow">
+      <table class="min-w-full text-sm bg-gray-800">
+        <thead class="bg-gray-700 text-gray-200 uppercase tracking-wider">
+          <tr>
+            <th class="p-3 text-left">Name</th>
+            <th class="p-3 text-left">Email</th>
+            <th class="p-3 text-left">Date & Time</th>
+            <th class="p-3 text-left">Location</th>
+            <th class="p-3 text-left">Constellation</th>
+            <th class="p-3 text-left">Star Count</th>
+            <th class="p-3 text-left">Weather</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for entry in submissions %}
+          <tr class="border-t border-gray-700 hover:bg-gray-700">
+            <td class="p-3">{{ entry.name }}</td>
+            <td class="p-3">{{ entry.email }}</td>
+            <td class="p-3">{{ entry.datetime }}</td>
+            <td class="p-3">{{ entry.location }}</td>
+            <td class="p-3">{{ entry.constellation }}</td>
+            <td class="p-3">{{ entry.star_count }}</td>
+            <td class="p-3">{{ entry.weather }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% else %}
+    <p class="text-gray-400 mt-4">No submissions yet.</p>
+    {% endif %}
+  </main>
+
+  <footer class="bg-gray-800 text-center text-sm text-gray-400 py-4 mt-12">
+    &copy; 2025 AstroLink
+  </footer>
+
+</body>
+</html>
