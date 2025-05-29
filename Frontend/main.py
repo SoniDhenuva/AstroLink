@@ -39,9 +39,13 @@ def submit():
 
     return jsonify({"message": "Observation submitted successfully!"}), 200
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
+@app.route('/map')
+def map():
+    return render_template('map.html')
+
+@app.route('/howto')
+def howto():
+    return render_template('howtosubmit.html')
 
 @app.route('/data')
 def data():

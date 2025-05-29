@@ -1,95 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Star Count: Light Pollution Mapping</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-gray-900 text-white font-sans">
-    <!-- Header -->
-    <header class="bg-gray-800 p-4 shadow">
-      <div class="max-w-4xl mx-auto flex justify-between items-center">
-        <h1 class="text-2xl font-bold">AstroLink</h1>
-        <nav>
-          <a href="#how" class="ml-4 hover:text-yellow-400">How To</a>
-          <a href="#submit" class="ml-4 hover:text-yellow-400">Submit Data</a>
-          <a href="/about" class="ml-4 hover:text-yellow-400">About</a>
-          <a href="/data" class="ml-4 hover:text-yellow-400">Data</a>
 
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - AstroLink</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-    <!-- Hero -->
-    <section class="text-center py-16 px-4 bg-gradient-to-b from-gray-900 to-gray-800">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-4xl font-bold mb-4">Help Map the Night Sky</h2>
-        <p class="text-lg text-gray-300">
-          Go outside, count stars in constellations, and help scientists track light pollution.
-        </p>
-        <a href="#submit" class="mt-6 inline-block bg-yellow-400 text-gray-900 font-semibold px-6 py-3 rounded-full shadow hover:bg-yellow-300 transition">Submit Your Observation</a>
-      </div>
+<body class="bg-gray-900 text-white font-sans leading-relaxed">
+  <!-- Header -->
+  <header class="bg-gray-800 p-5 shadow-md sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold tracking-wide">🌠 AstroLink</h1>
+      <nav class="space-x-4 text-sm">
+        <a href="/" class="hover:text-yellow-400">Home</a>
+        <a href="/howto" class="hover:text-yellow-400">Get Involved</a>
+        <a href="/data" class="hover:text-yellow-400">Data Table</a>
+        <a href="/map" class="hover:text-yellow-400">Map</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="bg-gradient-to-b from-gray-800 to-gray-900 py-16 text-center px-6">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-4xl font-extrabold mb-4">Shining Light on Darkness</h2>
+      <p class="text-xl text-gray-300">
+        AstroLink empowers citizen scientists to help fight light pollution—one star at a time.
+      </p>
+    </div>
+    <!-- Image Suggestion: Dark sky image with stars vs. city glow comparison -->
+    <img src="picture1.jpg" class="w-full max-w-md mx-auto rounded-lg shadow-lg my-6" />
+
+  </section>
+
+  <!-- About Section -->
+  <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
+    <section>
+      <h3 class="text-3xl font-semibold mb-3">What Is AstroLink?</h3>
+      <p class="text-gray-300 text-lg">
+        AstroLink is a global citizen science project that asks people like you to go outside, look up at the night sky, and count stars in constellations like Orion or Leo. By submitting what you see, you help us track light pollution and visualize how it's changing over time.
+      </p>
+      <!-- Image Suggestion: Diagram or illustration showing people stargazing in different places -->
     </section>
 
-    <!-- How To Participate -->
-    <section id="how" class="py-12 px-4 bg-gray-800">
-      <div class="max-w-4xl mx-auto">
-        <h3 class="text-3xl font-semibold mb-6 text-center">How to Participate</h3>
-        <ol class="list-decimal list-inside text-gray-200 space-y-4">
-          <li>Go outside on a clear night away from city lights.</li>
-          <li>Let your eyes adjust to the dark for 10–15 minutes.</li>
-          <li>Use an app to find Orion, Leo, or another constellation.</li>
-          <li>Count the visible stars in the constellation.</li>
-          <li>Record the time, weather, and your location.</li>
-          <li>Submit your observation using the form below.</li>
-        </ol>
-      </div>
+    <section>
+      <h3 class="text-3xl font-semibold mb-3">Why Light Pollution Is a Problem</h3>
+      <p class="text-gray-300 text-lg mb-3">
+        Light pollution doesn't just block our view of the stars — it affects ecosystems, wastes energy, and disrupts our natural sleep cycles. Wildlife, especially nocturnal animals, rely on natural light cycles to navigate and survive. Bright city lights can confuse migratory birds, sea turtles, and even insects.
+      </p>
+      <p class="text-gray-400 italic">When we lose the night sky, we lose more than stars — we lose a connection to the universe and our own biological rhythm.</p>
+      <!-- Image Suggestion: Infographic on effects of light pollution on wildlife and health -->
     </section>
 
-    <!-- Submit Data Form -->
-    <section id="submit" class="py-16 px-4 bg-gray-900 text-white">
-      <div class="max-w-2xl mx-auto">
-        <h3 class="text-3xl font-semibold text-center mb-6">Submit Your Data</h3>
-        <form action="/submit" method="POST" class="space-y-6">
-          <div>
-            <label class="block mb-1 text-sm">Observer Name</label>
-            <input type="text" name="name" class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" required />
-          </div>
-          <div>
-            <label class="block mb-1 text-sm">Email (optional)</label>
-            <input type="email" name="email" class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
-          </div>
-          <div>
-            <label class="block mb-1 text-sm">Date & Time of Observation</label>
-            <input type="datetime-local" name="datetime" class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" required />
-          </div>
-          <div>
-            <label class="block mb-1 text-sm">Location (City or Coordinates)</label>
-            <input type="text" name="location" class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" required />
-          </div>
-          <div>
-            <label class="block mb-1 text-sm">Constellation Observed</label>
-            <input type="text" name="constellation" class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" required />
-          </div>
-          <div>
-            <label class="block mb-1 text-sm">Number of Stars Seen</label>
-            <input type="number" name="star_count" class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" required />
-          </div>
-          <div>
-            <label class="block mb-1 text-sm">Weather Conditions</label>
-            <input type="text" name="weather" class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
-          </div>
-          <button type="submit" class="bg-yellow-400 text-gray-900 font-bold px-6 py-3 rounded-full hover:bg-yellow-300 transition">
-            Submit Observation
-          </button>
-        </form>
-      </div>
+    <section>
+      <h3 class="text-3xl font-semibold mb-3">How It Works</h3>
+      <ul class="list-decimal list-inside text-gray-300 space-y-2 pl-4 text-lg">
+        <li>Go outside on a clear night away from bright city lights.</li>
+        <li>Let your eyes adjust to the dark for 10–15 minutes.</li>
+        <li>Locate a target constellation like Orion or Leo.</li>
+        <li>Count how many stars you can clearly see.</li>
+        <li>Submit your results on our site to contribute to the global light pollution map.</li>
+      </ul>
+      <!-- Image Suggestion: Simple step-by-step graphic or illustration showing these steps -->
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 py-4 text-center text-sm text-gray-400">
-      &copy; 2025 Star Count Project. Look up. Log it. Light it less.
-    </footer>
-  </body>
+    <section>
+      <h3 class="text-3xl font-semibold mb-3">Our Goal</h3>
+      <p class="text-gray-300 text-lg">
+        Our mission is to build a real-time, community-powered map of light pollution across the globe. The more submissions we receive, the clearer the map becomes — helping scientists, cities, and communities understand where action is needed most.
+      </p>
+      <!-- Image Suggestion: Map wireframe or mockup showing areas of light pollution intensity -->
+    </section>
+
+    <section>
+      <h3 class="text-3xl font-semibold mb-3">Coming Soon: Interactive Light Pollution Map</h3>
+      <p class="text-gray-300 text-lg mb-1">
+        We’re developing a dynamic map that will glow brighter where the stars are fewer. Each star count you submit becomes a pixel in this larger picture, helping to track the spread of light pollution over time.
+    <p class="text-gray-300 text-lg mb-1">
+      At the end of the project cycle, we’ll compile a research report summarizing our findings — showcasing how light pollution has evolved across regions and highlighting areas most in need of action.
+    </p>
+    <p class="text-gray-400 italic">Your data matters. Let’s reclaim the night, together.</p>
+  </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 mt-12 text-center text-sm text-gray-400">
+    &copy; 2025 AstroLink. Powered by stargazers everywhere. ✨
+  </footer>
+</body>
+
 </html>
