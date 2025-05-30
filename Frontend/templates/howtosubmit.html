@@ -7,7 +7,7 @@
       position: relative;
       padding: 20px 0 0;
       width: 100%;
-      max-width: 180px;
+
     }
 
     .form__field {
@@ -66,6 +66,71 @@
     .form__field:invalid {
       box-shadow: none;
     }
+
+    .card {
+      position: relative;
+      width: 200px;
+      height: 250px;
+      border-radius: 14px;
+      z-index: 1111;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+      ;
+    }
+
+    .bg {
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 190px;
+      height: 240px;
+      z-index: 2;
+      background: rgba(255, 255, 255, .95);
+      backdrop-filter: blur(24px);
+      border-radius: 10px;
+      overflow: hidden;
+      outline: 2px solid white;
+    }
+
+    .blob {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: #ff0000;
+      opacity: 1;
+      filter: blur(12px);
+      animation: blob-bounce 5s infinite ease;
+    }
+
+    @keyframes blob-bounce {
+      0% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+      }
+
+      25% {
+        transform: translate(-100%, -100%) translate3d(100%, 0, 0);
+      }
+
+      50% {
+        transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
+      }
+
+      75% {
+        transform: translate(-100%, -100%) translate3d(0, 100%, 0);
+      }
+
+      100% {
+        transform: translate(-100%, -100%) translate3d(0, 0, 0);
+      }
+    }
   </style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -87,61 +152,72 @@
     </div>
   </header>
 
-  <!-- How To Participate -->
-  <section id="how" class="py-16 px-4 bg-gray-900 text-white">
-    <div class="max-w-4xl mx-auto">
-      <h3 class="text-3xl font-semibold mb-6 text-center">How to Participate</h3>
-      <ol class="list-decimal list-inside text-gray-200 space-y-4">
-        <li>Go outside on a clear night away from city lights.</li>
-        <li>Let your eyes adjust to the dark for 10–15 minutes.</li>
-        <li>Use an app to find Orion, Leo, or another constellation.</li>
-        <li>Count the visible stars in the constellation.</li>
-        <li>Record the time, weather, and your location.</li>
-        <li>Submit your observation using the form below.</li>
-      </ol>
-    </div>
-  </section>
+<!-- How To Participate -->
+<!-- How To Participate -->
+<section id="how" class="py-20 px-6 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
+  <div class="max-w-3xl mx-auto bg-gray-800 bg-opacity-50 backdrop-blur-md rounded-2xl shadow-2xl p-10">
+    <h3 class="text-4xl font-bold mb-8 text-center text-cyan-300 tracking-wide">How to Participate</h3>
+    <ol class="list-decimal list-inside text-gray-100 space-y-5 text-lg leading-relaxed">
+      <li>
+        Travel to a dark location on a clear night, far from city lights, to minimize light pollution.
+      </li>
+      <li>
+        Let your eyes adjust to the darkness for 10–15 minutes to improve visibility of faint stars.
+      </li>
+      <li>
+        Use a stargazing app or star chart to locate a major constellation such as Orion or Leo.
+      </li>
+      <li>
+        Count the number of visible stars within the chosen constellation.
+      </li>
+      <li>
+        Record the date, time, weather conditions, and your precise location (GPS coordinates, if possible).
+      </li>
+      <li>
+        Submit your observation using the form below to contribute to the community database.
+      </li>
+    </ol>
+  </div>
+</section>
+
+
 
   <!-- Submit Data Form -->
   <section id="submit" class="py-16 px-4 bg-gray-900 text-white">
     <div class="max-w-2xl mx-auto">
       <h3 class="text-3xl font-semibold text-center mb-6">Submit Your Data</h3>
       <form action="/submit" method="POST" class="space-y-6">
-        <div>
-          <label class="block mb-1 text-sm">Observer Name</label>
-          <input type="text" name="name"
-            class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-            required />
+
+        <div class="form__group field">
+          <input type="text" name="name" class="form__field" placeholder=" " required />
+          <label for="name" class="form__label">Observer Name</label>
         </div>
-        <div>
-          <label class="block mb-1 text-sm">Date & Time of Observation</label>
-          <input type="datetime-local" name="datetime"
-            class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-            required />
+
+        <div class="form__group field">
+          <input type="datetime-local" name="datetime" class="form__field" placeholder=" " required />
+          <label for="name" class="form__label">Date & Time of Observation</label>
         </div>
-        <div>
-          <label class="block mb-1 text-sm">Location (City or Coordinates)</label>
-          <input type="text" name="location"
-            class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-            required />
+
+        <div class="form__group field">
+          <input type="text" name="location" class="form__field" placeholder=" " required />
+          <label for="name" class="form__label">Location (City or Coordinates)</label>
         </div>
-        <div>
-          <label class="block mb-1 text-sm">Constellation Observed</label>
-          <input type="text" name="constellation"
-            class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-            required />
+
+        <div class="form__group field">
+          <input type="text" name="constellation" class="form__field" placeholder=" " required />
+          <label for="name" class="form__label">Constellation Observed</label>
         </div>
-        <div>
-          <label class="block mb-1 text-sm">Number of Stars Seen</label>
-          <input type="number" name="star_count"
-            class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-            required />
+
+        <div class="form__group field">
+          <input type="number" name="star_count" class="form__field" placeholder=" " required />
+          <label for="name" class="form__label">Number of Stars Seen</label>
         </div>
-        <div>
-          <label class="block mb-1 text-sm">Weather Conditions</label>
-          <input type="text" name="weather"
-            class="w-full px-4 py-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+
+        <div class="form__group field">
+          <input type="text" name="weather" class="form__field" placeholder=" " required />
+          <label for="name" class="form__label">Weather Conditions</label>
         </div>
+
         <!--<button type="submit" class="bg-yellow-400 text-gray-900 font-bold px-6 py-3 rounded-full hover:bg-yellow-300 transition">
           Submit Observation
         </button>-->

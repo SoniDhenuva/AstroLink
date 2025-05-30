@@ -3,93 +3,254 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About - AstroLink</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      /* full viewport width */
+      height: 100vh;
+      /* full viewport height */
+      background-color: #000;
+      /* overlay color */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      /* above everything else */
+    }
+
+    /* From Uiverse.io by mobinkakei */
+    .wrapper {
+      width: 200px;
+      height: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .circle {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      border-radius: 50%;
+      background-color: #fff;
+      left: 15%;
+      transform-origin: 50%;
+      animation: circle7124 0.5s alternate infinite ease;
+
+    }
+
+    @keyframes circle7124 {
+      0% {
+        top: 60px;
+        height: 5px;
+        border-radius: 50px 50px 25px 25px;
+        transform: scaleX(1.7);
+      }
+
+      40% {
+        height: 20px;
+        border-radius: 50%;
+        transform: scaleX(1);
+      }
+
+      100% {
+        top: 0%;
+      }
+    }
+
+    .circle:nth-child(2) {
+      left: 45%;
+      animation-delay: 0.2s;
+    }
+
+    .circle:nth-child(3) {
+      left: auto;
+      right: 15%;
+      animation-delay: 0.3s;
+    }
+
+    .shadow {
+      width: 20px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.9);
+      position: absolute;
+      top: 62px;
+      transform-origin: 50%;
+      z-index: -1;
+      left: 15%;
+      filter: blur(1px);
+      animation: shadow046 0.5s alternate infinite ease;
+    }
+
+    @keyframes shadow046 {
+      0% {
+        transform: scaleX(1.5);
+      }
+
+      40% {
+        transform: scaleX(1);
+        opacity: 0.7;
+      }
+
+      100% {
+        transform: scaleX(0.2);
+        opacity: 0.4;
+      }
+    }
+
+    .shadow:nth-child(4) {
+      left: 45%;
+      animation-delay: 0.2s;
+    }
+
+    .shadow:nth-child(5) {
+      left: auto;
+      right: 15%;
+      animation-delay: 0.3s;
+    }
+  </style>
 </head>
 
-<body class="bg-gray-900 text-white font-sans leading-relaxed">
-  <!-- Header -->
-  <header class="bg-gray-800 p-5 shadow-md sticky top-0 z-50">
-    <div class="max-w-5xl mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold tracking-wide">🌠 AstroLink</h1>
-      <nav class="space-x-4 text-sm">
-        <a href="/" class="hover:text-yellow-400">Home</a>
-        <a href="/howto" class="hover:text-yellow-400">Get Involved</a>
-        <a href="/data" class="hover:text-yellow-400">Data Table</a>
-        <a href="/map" class="hover:text-yellow-400">Map</a>
-      </nav>
+<body class="text-white font-sans leading-relaxed bg-cover bg-center bg-no-repeat"
+  style="background-image: url('https://github.com/user-attachments/assets/a3dc8cac-53e7-47e8-bcc2-c98ec10dcb23');">
+
+  <div id="loading-screen">
+    <!-- From Uiverse.io by mobinkakei -->
+    <div class="wrapper">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="shadow"></div>
+      <div class="shadow"></div>
+      <div class="shadow"></div>
     </div>
-  </header>
+  </div>
 
-  <!-- Hero Banner -->
-  <section class="bg-gradient-to-b from-gray-800 to-gray-900 py-16 text-center px-6">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-4xl font-extrabold mb-4">Shining Light on Darkness</h2>
-      <p class="text-xl text-gray-300">
-        AstroLink empowers citizen scientists to help fight light pollution—one star at a time.
-      </p>
-    </div>
-    <!-- Image Suggestion: Dark sky image with stars vs. city glow comparison -->
-    <img src="picture1.jpg" class="w-full max-w-md mx-auto rounded-lg shadow-lg my-6" />
+  <div id="main-content" style="display:none;">
+    <!-- Header -->
+    <header class="bg-gray-500 p-5 shadow-md sticky top-0 z-50">
+      <div class="max-w-5xl mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold tracking-wide">🌠 AstroLink</h1>
+        <nav class="space-x-4 text-sm">
+          <a href="/" class="hover:text-yellow-400">Home</a>
+          <a href="/howto" class="hover:text-yellow-400">Get Involved</a>
+          <a href="/data" class="hover:text-yellow-400">Data Table</a>
+          <a href="/map" class="hover:text-yellow-400">Map</a>
+        </nav>
+      </div>
+    </header>
 
-  </section>
-
-  <!-- About Section -->
-  <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
-    <section>
-      <h3 class="text-3xl font-semibold mb-3">What Is AstroLink?</h3>
-      <p class="text-gray-300 text-lg">
-        AstroLink is a global citizen science project that asks people like you to go outside, look up at the night sky, and count stars in constellations like Orion or Leo. By submitting what you see, you help us track light pollution and visualize how it's changing over time.
-      </p>
-      <!-- Image Suggestion: Diagram or illustration showing people stargazing in different places -->
+    <!-- Hero Banner -->
+    <section class="bg-black py-12 px-6 text-white text-center">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-5xl font-extrabold tracking-tight mb-6">
+          Shining Light on Darkness
+        </h1>
+        <p class="text-2xl text-gray-300 leading-relaxed">
+          AstroLink empowers citizen scientists to help fight light pollution—one star at a time.
+        </p>
+      </div>
     </section>
 
-    <section>
-      <h3 class="text-3xl font-semibold mb-3">Why Light Pollution Is a Problem</h3>
-      <p class="text-gray-300 text-lg mb-3">
-        Light pollution doesn't just block our view of the stars — it affects ecosystems, wastes energy, and disrupts our natural sleep cycles. Wildlife, especially nocturnal animals, rely on natural light cycles to navigate and survive. Bright city lights can confuse migratory birds, sea turtles, and even insects.
-      </p>
-      <p class="text-gray-400 italic">When we lose the night sky, we lose more than stars — we lose a connection to the universe and our own biological rhythm.</p>
-      <!-- Image Suggestion: Infographic on effects of light pollution on wildlife and health -->
-    </section>
+    <!-- About Section -->
+    <main class="max-w-4xl mx-auto px-6 py-12">
+      <div class="bg-black bg-opacity-60 rounded-2xl p-8 space-y-12 shadow-lg">
 
-    <section>
-      <h3 class="text-3xl font-semibold mb-3">How It Works</h3>
-      <ul class="list-decimal list-inside text-gray-300 space-y-2 pl-4 text-lg">
-        <li>Go outside on a clear night away from bright city lights.</li>
-        <li>Let your eyes adjust to the dark for 10–15 minutes.</li>
-        <li>Locate a target constellation like Orion or Leo.</li>
-        <li>Count how many stars you can clearly see.</li>
-        <li>Submit your results on our site to contribute to the global light pollution map.</li>
-      </ul>
-      <!-- Image Suggestion: Simple step-by-step graphic or illustration showing these steps -->
-    </section>
+        <section>
+          <h3 class="text-3xl font-semibold mb-3">What Is AstroLink?</h3>
+          <p class="text-gray-300 text-lg">
+            AstroLink is a global citizen science project that asks people like you to go outside, look up at the night
+            sky, and count stars in constellations like Orion or Leo. By submitting what you see, you help us track
+            light pollution and visualize how it's changing over time.
+          </p>
+        </section>
 
-    <section>
-      <h3 class="text-3xl font-semibold mb-3">Our Goal</h3>
-      <p class="text-gray-300 text-lg">
-        Our mission is to build a real-time, community-powered map of light pollution across the globe. The more submissions we receive, the clearer the map becomes — helping scientists, cities, and communities understand where action is needed most.
-      </p>
-      <!-- Image Suggestion: Map wireframe or mockup showing areas of light pollution intensity -->
-    </section>
+        <section>
+          <h3 class="text-3xl font-semibold mb-3">Why Light Pollution Is a Problem</h3>
+          <p class="text-gray-300 text-lg mb-3">
+            Light pollution doesn't just block our view of the stars — it affects ecosystems, wastes energy, and
+            disrupts our natural sleep cycles. Wildlife, especially nocturnal animals, rely on natural light cycles to
+            navigate and survive. Bright city lights can confuse migratory birds, sea turtles, and even insects.
+          </p>
+          <p class="text-gray-400 italic">
+            When we lose the night sky, we lose more than stars — we lose a connection to
+            the universe and our own biological rhythm.
+          </p>
+        </section>
 
-    <section>
-      <h3 class="text-3xl font-semibold mb-3">Coming Soon: Interactive Light Pollution Map</h3>
-      <p class="text-gray-300 text-lg mb-1">
-        We’re developing a dynamic map that will glow brighter where the stars are fewer. Each star count you submit becomes a pixel in this larger picture, helping to track the spread of light pollution over time.
-    <p class="text-gray-300 text-lg mb-1">
-      At the end of the project cycle, we’ll compile a research report summarizing our findings — showcasing how light pollution has evolved across regions and highlighting areas most in need of action.
-    </p>
-    <p class="text-gray-400 italic">Your data matters. Let’s reclaim the night, together.</p>
-  </section>
+        <section>
+          <h3 class="text-3xl font-semibold mb-3">How It Works</h3>
+          <ul class="list-decimal list-inside text-gray-300 space-y-2 pl-4 text-lg">
+            <li>Go outside on a clear night away from bright city lights.</li>
+            <li>Let your eyes adjust to the dark for 10–15 minutes.</li>
+            <li>Locate a target constellation like Orion or Leo.</li>
+            <li>Count how many stars you can clearly see.</li>
+            <li>Submit your results on our site to contribute to the global light pollution map.</li>
+          </ul>
+        </section>
 
-  </main>
+        <section>
+          <h3 class="text-3xl font-semibold mb-3">Our Goal</h3>
+          <p class="text-gray-300 text-lg">
+            Our mission is to build a real-time, community-powered map of light pollution across the globe. The more
+            submissions we receive, the clearer the map becomes — helping scientists, cities, and communities understand
+            where action is needed most.
+          </p>
+        </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 py-6 mt-12 text-center text-sm text-gray-400">
-    &copy; 2025 AstroLink. Powered by stargazers everywhere. ✨
-  </footer>
+        <section>
+          <h3 class="text-3xl font-semibold mb-3">Coming Soon: Interactive Light Pollution Map</h3>
+          <p class="text-gray-300 text-lg mb-1">
+            We’re developing a dynamic map that will glow brighter where the stars are fewer. Each star count you submit
+            becomes a pixel in this larger picture, helping to track the spread of light pollution over time.
+          </p>
+          <p class="text-gray-300 text-lg mb-1">
+            At the end of the project cycle, we’ll compile a research report summarizing our findings — showcasing how
+            light pollution has evolved across regions and highlighting areas most in need of action.
+          </p>
+          <p class="text-gray-400 italic">Your data matters. Let’s reclaim the night, together.</p>
+        </section>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6 mt-12 text-center text-sm text-gray-400">
+      &copy; 2025 AstroLink. Powered by stargazers everywhere. ✨
+    </footer>
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      const loadingScreen = document.getElementById('loading-screen');
+      const mainContent = document.getElementById('main-content');
+  
+      // Initially, you can ensure main content is hidden (optional)
+      if (mainContent) {
+        mainContent.style.display = 'none';
+      }
+  
+      // Wait 10 seconds before switching screens
+      setTimeout(() => {
+        // Hide the loading screen
+        if (loadingScreen) {
+          loadingScreen.style.display = 'none';
+        }
+        // Show the main content
+        if (mainContent) {
+          mainContent.style.display = 'block';
+        }
+      }, 1000); // 10000 ms = 10 seconds
+    });
+  </script>
+  
+
 </body>
 
 </html>
