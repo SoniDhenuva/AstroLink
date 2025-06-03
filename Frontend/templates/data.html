@@ -8,20 +8,32 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-900 text-white font-sans">
+<body class="text-white font-sans leading-relaxed bg-cover bg-center bg-no-repeat"
+style="background-image: url('https://github.com/user-attachments/assets/f28beb8d-2897-4668-b319-f0a068305985');">
 
-  <!-- Header -->
-  <header class="bg-gray-800 p-4 shadow">
-    <div class="max-w-4xl mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold">🌠 AstroLink</h1>
-      <nav>
-        <a href="/" class="ml-4 hover:text-yellow-400">Home</a>
-        <a href="/howto" class="ml-4 hover:text-yellow-400">Get Involved</a>
-        <a href="/data" class="ml-4 hover:text-yellow-400">DataTable</a>
-        <a href="/map" class="ml-4 hover:text-yellow-400">Map</a>
-      </nav>
-    </div>
-  </header>
+<header
+class="fixed top-0 left-0 w-full h-16 bg-black bg-opacity-80 backdrop-blur-md z-50 flex items-center justify-between px-8">
+<!-- Left: Logo/Title -->
+<div class="flex items-center space-x-3">
+  <img src="https://github.com/user-attachments/assets/393932b7-f260-49b4-b17e-dae5cf1aeed2" alt="Logo"
+    class="w-8 h-8 sm:w-10 sm:h-10 rounded-full" />
+  <h1
+    class="text-xl sm:text-2xl font-extrabold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+    ASTROLINK
+  </h1>
+</div>
+
+
+
+<!-- Right: Nav Links -->
+<nav class="flex space-x-6 text-sm sm:text-base text-gray-300">
+  <a href="/" class="hover:text-pink-400 transition-colors duration-200">Home</a>
+  <a href="/howto" class="hover:text-pink-400 transition-colors duration-200">Get Involved</a>
+  <a href="/data" class="hover:text-pink-400 transition-colors duration-200">Data Table</a>
+  <a href="/map" class="hover:text-pink-400 transition-colors duration-200">Map</a>
+</nav>
+<div class="absolute bottom-0 left-0 w-full h-1 bg-pink-500"></div>
+</header>
 
   <!-- Table -->
   <main class="max-w-6xl mx-auto p-6">

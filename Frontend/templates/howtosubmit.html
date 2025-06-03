@@ -131,6 +131,391 @@
         transform: translate(-100%, -100%) translate3d(0, 0, 0);
       }
     }
+
+    /* From Uiverse.io by BlackisPlay */
+    .planets {
+      position: relative;
+      height: 100px;
+      width: 100px;
+      display: flex;
+    }
+
+    #planetTrail1,
+    #planetTrail2,
+    #planetTrail3 {
+      outline: solid rgb(101, 101, 101) 1px;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    #planetTrail1::after,
+    #planetTrail2::after,
+    #planetTrail3::after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      border-radius: 50%;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #planetTrail1::after {
+      background-color: rgb(213, 213, 120);
+    }
+
+    #planetTrail2::after {
+      background-color: rgb(115, 174, 231);
+    }
+
+    #planetTrail3::after {
+      background-color: rgb(180, 73, 49);
+    }
+
+    #planetTrail1 {
+      width: 120px;
+      height: 120px;
+      animation: trails1 4s infinite;
+    }
+
+    #planetTrail2 {
+      width: 170px;
+      height: 170px;
+      animation: trails2 4s infinite;
+    }
+
+    #planetTrail3 {
+      width: 220px;
+      height: 220px;
+      animation: trails3 4s infinite;
+    }
+
+    @keyframes trails1 {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      40% {
+        transform: rotate(360deg);
+        width: 120px;
+        height: 120px;
+      }
+
+      50% {
+        width: 0px;
+        height: 0px;
+      }
+
+      90% {
+        width: 0px;
+        height: 0px;
+      }
+
+      100% {
+        width: 120px;
+        height: 120px;
+      }
+    }
+
+    @keyframes trails2 {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      40% {
+        transform: rotate(250deg);
+        width: 170px;
+        height: 170px;
+      }
+
+      50% {
+        width: 0px;
+        height: 0px;
+      }
+
+      90% {
+        width: 0px;
+        height: 0px;
+      }
+
+      100% {
+        width: 170px;
+        height: 170px;
+      }
+    }
+
+    @keyframes trails3 {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      40% {
+        transform: rotate(170deg);
+        width: 220px;
+        height: 220px;
+      }
+
+      50% {
+        width: 0px;
+        height: 0px;
+      }
+
+      90% {
+        width: 0px;
+        height: 0px;
+      }
+
+      100% {
+        width: 220px;
+        height: 220px;
+      }
+    }
+
+    #star {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: rgb(255, 170, 0);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: bouncingStar 4s infinite;
+    }
+
+    #starShadow {
+      position: absolute;
+      width: 50px;
+      height: 20px;
+      background-color: rgb(255, 170, 0);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 100%);
+      filter: blur(5px);
+      opacity: 0.3;
+      animation: shadowAnimation 4s infinite;
+    }
+
+    @keyframes bouncingStar {
+      0% {
+        transform: translate(-50%, -50%);
+      }
+
+      10% {
+        transform: translate(-50%, -30%);
+      }
+
+      20% {
+        transform: translate(-50%, -50%);
+      }
+
+      30% {
+        transform: translate(-50%, -30%);
+      }
+
+      40% {
+        transform: translate(-50%, -50%);
+        width: 50px;
+        height: 50px;
+      }
+
+      50% {
+        width: 0px;
+        height: 0px;
+      }
+
+      90% {
+        width: 0px;
+        height: 0px;
+      }
+
+      100% {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    @keyframes shadowAnimation {
+      0% {
+        opacity: 0.1;
+      }
+
+      10% {
+        opacity: 0.4;
+      }
+
+      20% {
+        opacity: 0.1;
+      }
+
+      30% {
+        opacity: 0.4;
+      }
+
+      40% {
+        opacity: 0.1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+
+      90% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0.1;
+      }
+    }
+
+    #blackHole {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: rgb(0, 0, 0);
+      outline: orange solid 5px;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: bouncingBlackHole 4s infinite;
+    }
+
+    @keyframes bouncingBlackHole {
+      0% {
+        height: 0px;
+        width: 0px;
+      }
+
+      40% {
+        width: 0px;
+        height: 0px;
+      }
+
+      50% {
+        width: 50px;
+        height: 50px;
+      }
+
+      90% {
+        width: 50px;
+        height: 50px;
+      }
+
+      100% {
+        width: 0px;
+        height: 0px;
+      }
+    }
+
+    #blackHoleDisk1 {
+      position: absolute;
+      width: 68px;
+      height: 68px;
+      clip-path: inset(50% 0 0 0);
+      border: black 10px solid;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotateX(70deg);
+      animation: diskAn 4s infinite;
+    }
+
+    #blackHoleDisk2 {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      clip-path: inset(0 0 50% 0);
+      border: rgb(245, 174, 8) 10px solid;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotateX(55deg);
+      animation: diskAn 4s infinite;
+    }
+
+    @keyframes diskAn {
+      0% {
+        height: 0px;
+        width: 0px;
+        border: orange 0px solid;
+      }
+
+      40% {
+        width: 0px;
+        height: 0px;
+        border: orange 0px solid;
+      }
+
+      50% {
+        width: 88px;
+        height: 88px;
+        border: orange 18px solid;
+      }
+
+      90% {
+        width: 88px;
+        height: 88px;
+        border: orange 18px solid;
+      }
+
+      100% {
+        width: 0px;
+        height: 0px;
+        border: orange 0px solid;
+      }
+    }
+
+    #planet {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: rgb(255, 255, 255);
+      border-radius: 50%;
+      animation: planetAn 4s infinite;
+    }
+
+    @keyframes planetAn {
+      0% {
+        opacity: 0;
+        transform: translate(0px, 0px);
+        z-index: 1;
+      }
+
+      50% {
+        opacity: 0;
+        transform: translate(0px, 0px);
+        z-index: 1;
+      }
+
+      58% {
+        opacity: 1;
+      }
+
+      70% {
+        opacity: 1;
+        transform: translate(100px, 40px);
+        z-index: 1;
+      }
+
+      71% {
+        z-index: 0;
+      }
+
+      90% {
+        z-index: 0;
+        opacity: 1;
+        transform: translate(-10px, 70px);
+      }
+
+      100% {
+        transform: translate(-10px, 70px);
+        opacity: 0;
+      }
+    }
   </style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -138,53 +523,86 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body class="text-white font-sans leading-relaxed bg-cover bg-center bg-no-repeat" style="background-image: url('https://github.com/user-attachments/assets/a3dc8cac-53e7-47e8-bcc2-c98ec10dcb23');">
-  <!-- Header -->
-  <header class="bg-gray-800 p-4 shadow">
-    <div class="max-w-4xl mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold">🌠 AstroLink</h1>
-      <nav>
-        <a href="/" class="ml-4 hover:text-yellow-400">Home</a>
-        <a href="/howto" class="ml-4 hover:text-yellow-400">Get Involved</a>
-        <a href="/data" class="ml-4 hover:text-yellow-400">DataTable</a>
-        <a href="/map" class="ml-4 hover:text-yellow-400">Map</a>
-      </nav>
+
+
+
+<body class="text-white font-sans leading-relaxed bg-cover bg-center bg-no-repeat"
+  style="background-image: url('https://github.com/user-attachments/assets/f28beb8d-2897-4668-b319-f0a068305985');">
+
+  <!-- Loader Container -->
+  <div id="loader" class="fixed inset-0 z-[9999] bg-black flex items-center justify-center">
+    <!-- From Uiverse.io by BlackisPlay -->
+    <div id="planetTrail1"></div>
+    <div id="planetTrail2"></div>
+    <div id="planetTrail3"></div>
+
+    <div class="planets">
+      <div id="planet"></div>
+      <div id="star"></div>
+      <div id="starShadow"></div>
+      <div id="blackHoleDisk2"></div>
+      <div id="blackHole"></div>
+      <div id="blackHoleDisk1"></div>
     </div>
+  </div>
+  <header
+    class="fixed top-0 left-0 w-full h-16 bg-black bg-opacity-80 backdrop-blur-md z-50 flex items-center justify-between px-8">
+    <!-- Left: Logo/Title -->
+    <div class="flex items-center space-x-3">
+      <img src="https://github.com/user-attachments/assets/393932b7-f260-49b4-b17e-dae5cf1aeed2" alt="Logo"
+        class="w-8 h-8 sm:w-10 sm:h-10 rounded-full" />
+      <h1
+        class="text-xl sm:text-2xl font-extrabold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
+        ASTROLINK
+      </h1>
+    </div>
+
+
+
+    <!-- Right: Nav Links -->
+    <nav class="flex space-x-6 text-sm sm:text-base text-gray-300">
+      <a href="/" class="hover:text-pink-400 transition-colors duration-200">Home</a>
+      <a href="/howto" class="hover:text-pink-400 transition-colors duration-200">Get Involved</a>
+      <a href="/data" class="hover:text-pink-400 transition-colors duration-200">Data Table</a>
+      <a href="/map" class="hover:text-pink-400 transition-colors duration-200">Map</a>
+    </nav>
+    <div class="absolute bottom-0 left-0 w-full h-1 bg-pink-500"></div>
   </header>
 
-<!-- How To Participate -->
-<!-- How To Participate -->
-<section id="how" class="py-20 px-6 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
-  <div class="max-w-3xl mx-auto bg-gray-800 bg-opacity-50 backdrop-blur-md rounded-2xl shadow-2xl p-10">
-    <h3 class="text-4xl font-bold mb-8 text-center text-cyan-300 tracking-wide">How to Participate</h3>
-    <ol class="list-decimal list-inside text-gray-100 space-y-5 text-lg leading-relaxed">
-      <li>
-        Travel to a dark location on a clear night, far from city lights, to minimize light pollution.
-      </li>
-      <li>
-        Let your eyes adjust to the darkness for 10–15 minutes to improve visibility of faint stars.
-      </li>
-      <li>
-        Use a stargazing app or star chart to locate a major constellation such as Orion or Leo.
-      </li>
-      <li>
-        Count the number of visible stars within the chosen constellation.
-      </li>
-      <li>
-        Record the date, time, weather conditions, and your precise location (GPS coordinates, if possible).
-      </li>
-      <li>
-        Submit your observation using the form below to contribute to the community database.
-      </li>
-    </ol>
-  </div>
-</section>
+  <!-- How To Participate -->
+  <!-- How To Participate -->
+  <section id="how" class="py-20 px-6 bg-gradient-to-b from-putple-700 via-purpple-600 to-purple-700 text-white">
+    <div class="max-w-3xl mx-auto bg-purple-800 bg-opacity-50 backdrop-blur-md rounded-2xl shadow-2xl p-10">
+      <h3 class="text-4xl font-bold mb-8 text-center text-cyan-300 tracking-wide">How to Participate</h3>
+      <ol class="list-decimal list-inside text-gray-100 space-y-5 text-lg leading-relaxed">
+        <li>
+          Travel to a dark location on a clear night, far from city lights, to minimize light pollution.
+        </li>
+        <li>
+          Let your eyes adjust to the darkness for 10–15 minutes to improve visibility of faint stars.
+        </li>
+        <li>
+          Use a stargazing app or star chart to locate a major constellation such as Orion or Leo.
+        </li>
+        <li>
+          Count the number of visible stars within the chosen constellation.
+        </li>
+        <li>
+          Record the date, time, weather conditions, and your precise location (GPS coordinates, if possible).
+        </li>
+        <li>
+          Submit your observation using the form below to contribute to the community database.
+        </li>
+      </ol>
+    </div>
+  </section>
 
 
 
   <!-- Submit Data Form -->
-  <section id="submit" class="py-16 px-4 bg-gray-900 text-white">
-    <div class="max-w-2xl mx-auto">
+  <section id="submit" class="py-16 px-4 text-white">
+    <div class="max-w-2xl mx-auto bg-black bg-opacity-70 p-8 rounded-xl">
+
       <h3 class="text-3xl font-semibold text-center mb-6">Submit Your Data</h3>
       <form action="/submit" method="POST" class="space-y-6">
 
@@ -218,18 +636,34 @@
           <label for="name" class="form__label">Weather Conditions</label>
         </div>
 
-        <!--<button type="submit" class="bg-yellow-400 text-gray-900 font-bold px-6 py-3 rounded-full hover:bg-yellow-300 transition">
+        <button type="submit"
+          class="bg-yellow-400 text-gray-900 font-bold px-6 py-3 rounded-full hover:bg-blue-300 transition">
           Submit Observation
-        </button>-->
+        </button>
       </form>
     </div>
   </section>
-
   <!-- Footer -->
-  <footer class="bg-gray-800 py-4 text-center text-sm text-gray-400">
+  <footer class="bg-purple-800 py-4 text-center text-sm text-gray-400">
     &copy; 2025 Star Count Project. Look up. Log it. Light it less.
   </footer>
 
 </body>
+
+<script>
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      const loader = document.getElementById("loader");
+      if (loader) {
+        loader.style.opacity = "0";
+        loader.style.transition = "opacity 0.5s ease";
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 500);
+      }
+    }, 1700); // Minimum time before fade
+  });
+
+</script>
 
 </html>
